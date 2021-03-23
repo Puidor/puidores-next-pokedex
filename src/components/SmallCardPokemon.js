@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import styles from "../styles/SmallCardPokemon.module.css";
 
 export default function SmallCardPokemon({ pokemons }) {
