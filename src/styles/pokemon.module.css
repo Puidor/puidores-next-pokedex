@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ef4f4f;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
