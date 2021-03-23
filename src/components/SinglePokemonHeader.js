@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/Link";
-import styles from "../styles/singlePokemonHeader.module.css";
+import styles from "../styles/SinglePokemonHeader.module.css";
 
 export default function SinglePokemonHeader({ pokemon }) {
   return (
