@@ -1,17 +1,28 @@
 import React from "react";
 import SinglePokemonHeader from "../components/SinglePokemonHeader";
 import SinglePokemonImage from "../components/SinglePokemonImage";
+import HeaderPokedex from "../components/HeaderPokedex";
 import styles from "../styles/pokemon.module.css";
+import SinglePokemonDescription from "../components/SinglePokemonDescription";
 
 export default function pokemon({ pokemon }) {
   return (
-    <div className={styles.container}>
-      <SinglePokemonHeader pokemon={pokemon}></SinglePokemonHeader>
-      <SinglePokemonImage
-        imagePokemon={pokemon.image}
-        namePokemon={pokemon.name}
-      ></SinglePokemonImage>
-    </div>
+    <>
+      <div className={styles.container}>
+        <HeaderPokedex title={"Pokemon | " + pokemon.name}></HeaderPokedex>
+        <SinglePokemonHeader pokemon={pokemon}></SinglePokemonHeader>
+        <SinglePokemonImage
+          imagePokemon={pokemon.image}
+          namePokemon={pokemon.name}
+        ></SinglePokemonImage>
+      </div>
+
+      <SinglePokemonDescription
+        heightPokemon={pokemon.height}
+        weightPokemon={pokemon.weight}
+        abilitiesPokemon={pokemon.abilities}
+      ></SinglePokemonDescription>
+    </>
   );
 }
 

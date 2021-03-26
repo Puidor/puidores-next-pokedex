@@ -21,7 +21,7 @@ export default function SinglePokemonHeader({ pokemon }) {
       </div>
 
       <div className={styles.pokemonNumber}>
-        <h3>#{pokemon.order}</h3>
+        <h1>#{pokemon.order}</h1>
       </div>
     </div>
   );
