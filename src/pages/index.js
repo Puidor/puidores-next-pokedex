@@ -1,19 +1,21 @@
 import HeaderPokedex from "../components/HeaderPokedex";
 import SmallCardPokemon from "../components/SmallCardPokemon";
 
-export default function Home({ pokemons }) {
+export default function Home({ kantoRegion, johtoRegion }) {
   return (
     <div>
       <HeaderPokedex title="Next | Pokedex"></HeaderPokedex>
 
-      <SmallCardPokemon pokemons={pokemons}></SmallCardPokemon>
+      <SmallCardPokemon pokemons={johtoRegion}></SmallCardPokemon>
     </div>
   );
 }
 
 export const getStaticProps = async () => {
   try {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/?limit=251`
+    );
     const { results } = await response.json();
 
     const pokemons = results.map((result, index) => {
@@ -26,8 +28,11 @@ export const getStaticProps = async () => {
       };
     });
 
+    const kantoRegion = pokemons.slice(0, 151);
+    const johtoRegion = pokemons.slice(151, 251);
+
     return {
-      props: { pokemons },
+      props: { kantoRegion, johtoRegion },
     };
   } catch (error) {
     console.log(error);

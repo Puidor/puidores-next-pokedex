@@ -27,7 +27,7 @@ export default function pokemon({ pokemon }) {
 }
 
 export const getServerSideProps = async ({ query }) => {
-  const id = query.id;
+  const id = Number(query.id) + 151;
 
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
